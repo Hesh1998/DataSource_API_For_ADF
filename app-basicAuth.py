@@ -47,7 +47,11 @@ def get_customer_data():
 
         try:
             datetime.strptime(request_date, '%Y-%m-%d')
-            return request_date
+            
+            # Runs the SQL query against the data warehouse and gets a response
+            # Returns this response in JSON format
+            json_response = logic.get_customer_data_from_sourceDB(request_date)
+            return json.loads(json_response), 200
         except ValueError:
             # Raise 400 Bad Request if an invalid date is passed
             abort(400, description="Invalid date.")
