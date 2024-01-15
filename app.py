@@ -61,3 +61,8 @@ def get_customer_data():
 # Run Flask application
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000, debug=True)
+
+
+# https://www.youtube.com/watch?v=J5bIPtEbS0Q&t=168s
+# How a JWT token work?
+# Bearer token vs JWT token?
